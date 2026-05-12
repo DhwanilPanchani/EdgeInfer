@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-05-12T16:02:31.637692Z",
+  "model": "distilbert-base-uncased (ONNX)",
+  "runtime": "onnxruntime-cpu",
+  "n_runs": 100,
+  "configs": {
+    "DEFAULT": {
+      "p50_ms": 3.0403539985854877,
+      "p90_ms": 3.1857663987466367,
+      "p99_ms": 3.8661109202075754,
+      "min_ms": 2.9612500002258457,
+      "max_ms": 3.9555000003019813,
+      "mean_ms": 3.086996650090441,
+      "regression_count": 0,
+      "regression_runs": []
+    },
+    "MEMORY_OPTIMIZED": {
+      "p50_ms": 3.026416499778861,
+      "p90_ms": 3.2021160986914765,
+      "p99_ms": 3.761922999474337,
+      "min_ms": 2.9324170027393848,
+      "max_ms": 3.8574579994019587,
+      "mean_ms": 3.0742579099387513,
+      "regression_count": 0,
+      "regression_runs": []
+    },
+    "PARALLEL": {
+      "p50_ms": 3.737042001375812,
+      "p90_ms": 4.331062500205007,
+      "p99_ms": 5.965924998890852,
+      "min_ms": 3.1252910011971835,
+      "max_ms": 8.062249999056803,
+      "mean_ms": 3.8302496098549454,
+      "regression_count": 1,
+      "regression_runs": [
+        69
+      ]
+    }
+  },
+  "peak_memory_mb": 0.002,
+  "avg_cpu_percent": 46.28
+}
