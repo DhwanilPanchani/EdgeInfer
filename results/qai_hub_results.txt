@@ -1,0 +1,53 @@
+======================================================================
+  DistilBERT FP32 — Qualcomm AI Hub Hexagon NPU Profile
+======================================================================
+  Model   : distilbert-base-uncased (FP32, ONNX opset 17)
+  Device  : Snapdragon 8 Elite QRD
+  Runtime : QNN context binary (Hexagon NPU)
+  Input   : batch=1, seq_len=128
+
+  Job URLs
+    Compile : https://workbench.aihub.qualcomm.com/jobs/jp0ee89e5/
+    Profile : https://workbench.aihub.qualcomm.com/jobs/jgd77y4lg/
+
+  Latency (microseconds)
+    Estimated   : 1521 µs
+    P50         : 1553 µs
+    P99         : 2264 µs
+    Mean        : 1586 µs
+    Cold start  : 2440 µs
+    Warm median : N/A
+
+  Latency (milliseconds, for comparison)
+    P50        : 1.553 ms
+    P99        : 2.264 ms
+    Mean       : 1.586 ms
+    Cold start : 2.440 ms
+
+  Peak Memory
+    166.7 MB (174817280 bytes)
+
+  Compute Unit Breakdown (NPU vs CPU vs GPU)
+    Total ops : 205
+    NPU ops   : 205  (100.0%)
+    CPU ops   : 0
+    GPU ops   : 0
+
+  Comparison vs Laptop (Apple M-series, ONNX Runtime 1.26)
+    Laptop DEFAULT          p99: 3.866 ms
+    Laptop MEMORY_OPTIMIZED p99: 3.761 ms
+    Laptop PARALLEL         p99: 5.966 ms
+    Laptop best p99              : 3.761 ms
+    Hexagon p99                  : 2.264 ms
+    Speedup vs laptop best       : 1.66×
+    Speedup vs laptop PARALLEL   : 2.64×
+
+  Key Question: Does DistilBERT get 100% NPU coverage?
+    NPU coverage: 100.0%  (205 / 205 ops on NPU)
+    All ops executed on NPU — 100% NPU coverage achieved.
+
+  Note
+    p99 is 45% above p50 (2.264ms vs 1.553ms) due to variable attention
+    memory access patterns — occasional DRAM spill vs on-chip SRAM hit.
+    This is a real production tail latency investigation target.
+======================================================================

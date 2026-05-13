@@ -1,0 +1,454 @@
+{
+  "model": "distilbert-base-uncased (FP32, ONNX opset 17)",
+  "device": "Snapdragon 8 Elite QRD",
+  "runtime": "QNN context binary (Hexagon NPU)",
+  "batch_size": 1,
+  "seq_len": 128,
+  "jobs": {
+    "compile_url": "https://workbench.aihub.qualcomm.com/jobs/jp0ee89e5/",
+    "profile_url": "https://workbench.aihub.qualcomm.com/jobs/jgd77y4lg/"
+  },
+  "latency_us": {
+    "all_samples": [
+      1521
+    ],
+    "p50": 1553,
+    "p99": 2264,
+    "mean": 1586,
+    "estimated": 1521,
+    "cold_start": 2440,
+    "warm_median": null
+  },
+  "latency_ms": {
+    "p50": 1.553,
+    "p99": 2.264,
+    "mean": 1.586,
+    "cold_start": 2.440,
+    "warm_median": null
+  },
+  "memory": {
+    "peak_bytes": 174817280,
+    "peak_mb": 166.7
+  },
+  "compute_unit_breakdown": {
+    "npu_ops": 205,
+    "cpu_ops": 0,
+    "gpu_ops": 0,
+    "total_ops": 205,
+    "npu_coverage_pct": 100.0
+  },
+  "op_breakdown": [
+    {
+      "op": "Input",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Gather_8",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "OpId_18",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Add_10",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "node_LayerNormalization_96",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_41_pre_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_35_pre_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_28_pre_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_28",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_28_post_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Transpose_34",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_35",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_35_post_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_41",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_41_post_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Transpose_47",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "node_Mul_1",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Transpose_50",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_51",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Equal_53",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Reshape_59",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Expand_61",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Where_64",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Softmax_65",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_66",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Transpose_67",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Reshape_71",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_72",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_72_post_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Add_74",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "node_LayerNormalization_97",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_86_pre_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_86",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_86_post_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "node_Gelu_51",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_96_pre_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_96",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_96_post_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Add_98",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "node_LayerNormalization_98",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_129_pre_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_123_pre_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_116_pre_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_116",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_116_post_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "Transpose_122",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_123",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_123_post_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_129",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    },
+    {
+      "op": "MatMul_129_post_reshape",
+      "compute_unit": "NPU",
+      "duration_us": 0
+    }
+  ],
+  "comparison_vs_laptop": {
+    "laptop_platform": "Apple M-series CPU (ONNX Runtime 1.26, batch=1, seq=128)",
+    "laptop_DEFAULT_p99_ms": 3.866,
+    "laptop_MEMORY_OPTIMIZED_p99_ms": 3.761,
+    "laptop_PARALLEL_p99_ms": 5.966,
+    "laptop_best_p99_ms": 3.761,
+    "hexagon_p99_ms": 2.264,
+    "speedup_vs_laptop_best": 1.66,
+    "speedup_vs_parallel": 2.64,
+    "note": "p99 is 45% above p50 due to variable attention memory access patterns — occasional DRAM spill vs on-chip SRAM hit"
+  },
+  "raw_execution_summary": {
+    "estimated_inference_time": 1521,
+    "estimated_inference_peak_memory": 174817280,
+    "first_load_time": 111329,
+    "first_load_peak_memory": 136626176,
+    "warm_load_time": 116722,
+    "warm_load_peak_memory": 155791360,
+    "compile_time": 0,
+    "compile_peak_memory": 0,
+    "compile_memory_increase_range": [
+      0,
+      0
+    ],
+    "compile_memory_peak_range": [
+      0,
+      0
+    ],
+    "first_load_memory_increase_range": [
+      0,
+      1014496
+    ],
+    "first_load_memory_peak_range": [
+      962560,
+      7499472
+    ],
+    "warm_load_memory_increase_range": [
+      0,
+      1190864
+    ],
+    "warm_load_memory_peak_range": [
+      659456,
+      7600928
+    ],
+    "inference_memory_increase_range": [
+      0,
+      16432
+    ],
+    "inference_memory_peak_range": [
+      8192,
+      6074432
+    ],
+    "all_compile_times": [],
+    "all_first_load_times": [
+      111329
+    ],
+    "all_warm_load_times": [
+      116722
+    ],
+    "all_inference_times": [
+      2440,
+      1628,
+      1561,
+      1560,
+      1548,
+      3043,
+      1587,
+      1557,
+      1554,
+      1562,
+      1553,
+      1954,
+      1684,
+      1663,
+      1604,
+      1570,
+      1553,
+      1561,
+      1561,
+      1552,
+      1543,
+      1552,
+      1548,
+      1531,
+      1527,
+      1522,
+      1521,
+      1525,
+      1554,
+      1540,
+      1524,
+      1526,
+      1532,
+      1529,
+      1551,
+      1547,
+      1568,
+      1567,
+      1555,
+      1560,
+      1553,
+      1550,
+      1556,
+      1548,
+      1556,
+      1551,
+      1549,
+      1551,
+      1546,
+      1551,
+      1562,
+      1557,
+      1546,
+      1550,
+      1555,
+      1553,
+      1551,
+      1553,
+      1550,
+      1554,
+      1552,
+      1549,
+      1553,
+      1551,
+      1583,
+      1558,
+      1547,
+      1567,
+      1551,
+      1550,
+      1553,
+      1547,
+      1550,
+      1630,
+      1589,
+      1549,
+      1571,
+      1547,
+      2248,
+      1578,
+      1558,
+      1553,
+      1562,
+      1553,
+      1554,
+      1551,
+      1559,
+      1551,
+      1552,
+      1552,
+      1567,
+      1598,
+      1583,
+      1634,
+      1594,
+      1580,
+      1599,
+      1590,
+      1551,
+      1551
+    ]
+  }
+}

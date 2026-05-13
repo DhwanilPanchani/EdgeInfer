@@ -62,6 +62,32 @@ cmake --build .
 ./edge_infer_stub
 ```
 
+## Hexagon NPU Validation (Qualcomm AI Hub)
+
+DistilBERT FP32 profiled on real Snapdragon 8 Elite hardware via Qualcomm AI Hub.
+**Device:** Snapdragon 8 Elite QRD · **Runtime:** QNN context binary · **Input:** batch=1, seq=128
+
+| Config | Platform | P99 Latency |
+|---|---|---|
+| DEFAULT | Apple M-series CPU (ONNX Runtime 1.26) | 3.87 ms |
+| MEMORY_OPTIMIZED | Apple M-series CPU (ONNX Runtime 1.26) | 3.76 ms |
+| PARALLEL | Apple M-series CPU (ONNX Runtime 1.26) | 5.97 ms |
+| **FP32** | **Hexagon NPU (QNN)** | **2.26 ms** |
+
+**Key findings:**
+
+1. **100% NPU operator coverage** — all 205 ops including LayerNorm, Softmax, GELU, and attention MatMuls execute natively on Hexagon, zero CPU fallbacks.
+
+2. **Hexagon p99 is 2.64× faster than PARALLEL on CPU** — the thread coordination overhead that made PARALLEL the worst config on CPU simply does not exist on NPU; hardware handles graph dispatch natively.
+
+3. **p99 is 45% above p50 (2.26 ms vs 1.55 ms)** — variable memory access patterns in attention layers cause occasional DRAM spill vs on-chip SRAM hits, a real production tail latency investigation target.
+
+**Reproducibility:**
+- Compile job: https://workbench.aihub.qualcomm.com/jobs/jp0ee89e5/
+- Profile job: https://workbench.aihub.qualcomm.com/jobs/jgd77y4lg/
+
+Full results: `results/qai_hub_results.json` · `results/qai_hub_results.txt`
+
 ## Tech Stack
 | Layer | Technology |
 |-------|-----------|

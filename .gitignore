@@ -6,3 +6,5 @@ __pycache__/
 results/*
 !results/results.json
 !results/benchmark_chart.png
+!results/qai_hub_results.json
+!results/qai_hub_results.txt
